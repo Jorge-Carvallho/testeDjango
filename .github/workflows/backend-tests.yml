@@ -18,13 +18,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Instalar dependências
+      - name: Instalar pipenv e dependências
         run: |
           cd backend
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install pipenv
+          pipenv install --dev
 
       - name: Rodar testes
         run: |
           cd backend
-          python manage.py test
+          pipenv run python manage.py test
