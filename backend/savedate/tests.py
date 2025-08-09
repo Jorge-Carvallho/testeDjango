@@ -111,7 +111,7 @@ class SaveDateAPITest(TestCase):
 
     def setUp(self):
         self.client = APIClient()
-        self.url = "/save-date/"  # corrigido para sua url do urls.py
+        self.url = "/api/save-date/"  # CORRIGIDO para refletir o prefixo /api/
 
         self.valid_payload = {
             "title": "Meu Evento API",
