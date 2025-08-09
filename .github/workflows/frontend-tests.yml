@@ -23,7 +23,7 @@ jobs:
           cd frontend
           npm install
 
-      - name: Rodar testes
+      - name: Rodar testes com npx vitest
         run: |
           cd frontend
-          npm test
+          npx vitest run

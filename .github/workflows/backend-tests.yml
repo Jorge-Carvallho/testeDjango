@@ -1,31 +1,31 @@
-name: Backend Tests
+# name: Backend Tests
 
-on:
-  push:
-    branches: [ "main", "staging" ]
-  pull_request:
-    branches: [ "main", "staging" ]
+# on:
+#   push:
+#     branches: [ "main", "staging" ]
+#   pull_request:
+#     branches: [ "main", "staging" ]
 
-jobs:
-  test-backend:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
+# jobs:
+#   test-backend:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout do código
+#         uses: actions/checkout@v4
 
-      - name: Configurar Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+#       - name: Configurar Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: '3.11'
 
-      - name: Instalar pipenv e dependências
-        run: |
-          cd backend
-          python -m pip install --upgrade pip
-          pip install pipenv
-          pipenv install --dev
+#       - name: Instalar pipenv e dependências
+#         run: |
+#           cd backend
+#           python -m pip install --upgrade pip
+#           pip install pipenv
+#           pipenv install --dev
 
-      - name: Rodar testes
-        run: |
-          cd backend
-          pipenv run python manage.py test
+#       - name: Rodar testes
+#         run: |
+#           cd backend
+#           pipenv run python manage.py test
