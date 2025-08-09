@@ -25,7 +25,17 @@ jobs:
           pip install pipenv
           pipenv install --dev
 
-      - name: Rodar testes
+      - name: Rodar testes de modelo
         run: |
           cd backend
-          pipenv run python manage.py test
+          pipenv run python manage.py test savedate.tests.SaveDateModelTest
+
+      - name: Rodar testes de serializers
+        run: |
+          cd backend
+          pipenv run python manage.py test savedate.tests.SaveDateSerializerTest
+
+      - name: Rodar testes de API
+        run: |
+          cd backend
+          pipenv run python manage.py test savedate.tests.SaveDateAPITest
