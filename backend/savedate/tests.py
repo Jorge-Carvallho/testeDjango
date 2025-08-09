@@ -1,3 +1,10 @@
+import sys
+import subprocess
+try:
+    import tzdata
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "tzdata"])
+
 from django.test import TestCase
 from savedate.models import SaveDate
 from django.core.exceptions import ValidationError
@@ -111,7 +118,7 @@ class SaveDateAPITest(TestCase):
 
     def setUp(self):
         self.client = APIClient()
-        self.url = "/api/save-date/"  # CORRIGIDO para refletir o prefixo /api/
+        self.url = "/api/save-date/"  
 
         self.valid_payload = {
             "title": "Meu Evento API",
