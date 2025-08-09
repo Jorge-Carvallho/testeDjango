@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Instalar dependências
         run: |
@@ -26,4 +26,4 @@ jobs:
       - name: Rodar testes
         run: |
           cd frontend
-          npm test -- --watchAll=false
+          npm test
